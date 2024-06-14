@@ -19,7 +19,7 @@ export function ButtonBack() {
       {isMobile ? (
         <button>
           <img
-            src="../public/back.png"
+            src="/foto/back.png"
             alt="exit"
             className="button-header_mobile"
           />

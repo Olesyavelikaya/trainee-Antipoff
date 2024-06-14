@@ -70,13 +70,13 @@ export function PageHuman() {
             <p className="number-phone_page-human">
               {" "}
               <span>
-                <img src="../public/phone.png" alt="phone" />
+                <img src="/foto/phone.png" alt="phone" />
               </span>
               +7 (954) 333-44-55
             </p>
             <p className="email_page-human">
               <span>
-                <img src="../public/mail.png" alt="mail" className="img-mail" />{" "}
+                <img src="/foto/mail.png" alt="mail" className="img-mail" />{" "}
               </span>
               {user?.email}{" "}
             </p>

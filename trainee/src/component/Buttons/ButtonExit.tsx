@@ -30,7 +30,7 @@ export function ButtonExit() {
       {isMobile ? (
         <button onClick={handleExit}>
           <img
-            src="../public/exit.png"
+            src="/foto/exit.png"
             alt="exit"
             className="button-header_mobile"
           />
