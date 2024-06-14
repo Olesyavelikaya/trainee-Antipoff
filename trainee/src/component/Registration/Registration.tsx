@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Cookies from "js-cookie";
 import { useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom';
 import { selectUser } from "../../context/context";
 import { InputName } from "./InputName";
 import { InputEmail } from "./InputEmail";
@@ -10,6 +11,8 @@ import "./registration.css";
 
 export function Registration() {
   const currentUser = useSelector(selectUser);
+  const navigate = useNavigate();
+
   const [errorEmail, setErrorEmail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
   const [errorRepeatPassword, setErrorRepeatPassword] = useState("");
@@ -57,7 +60,7 @@ export function Registration() {
       setErrorRepeatPassword("Пароль должен содержать минимум 6 символов");
       isValid = false;
     } else {
-      setErrorPassword("");
+      setErrorRepeatPassword("");
     }
     return isValid;
   };
@@ -68,7 +71,7 @@ export function Registration() {
       setErrorRepeatPassword("Пароли должны совпадать");
       isValid = false;
     } else {
-      setErrorPassword("");
+      setErrorRepeatPassword("");
     }
     return isValid;
   };
@@ -85,12 +88,12 @@ export function Registration() {
     }
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+ const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (validateForm()) {
       Cookies.set("name", currentUser.userName);
-      console.log(Cookies.get("name"));
-      window.location.reload();
+      navigate(0);
     }
   };
 

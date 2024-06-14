@@ -1,11 +1,13 @@
 import "./Button.css";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import Cookies from "js-cookie";
 import { userReset, AppDispatch } from "../../context/context";
 
 export function ButtonExit() {
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -22,7 +24,7 @@ export function ButtonExit() {
   const handleExit = () => {
     Cookies.remove("name");
     dispatch(userReset());
-    window.location.reload();
+    navigate(0);
   };
 
   return (

@@ -5,7 +5,7 @@ import { fetchCardInfo } from "./cardDataRequest";
 const initialStateCard: cardInfo = {
   dataPageOne: [],
   dataPageTwo: [],
-  status: "ide",
+  status: "idle",
 };
 
 const CardInfoSlice = createSlice({
