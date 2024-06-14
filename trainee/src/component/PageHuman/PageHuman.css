@@ -1,0 +1,137 @@
+.header-page_human {
+  background-color: var(--violet);
+}
+
+.header-page_buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-header_page-human {
+  display: flex;
+}
+
+.img-avatar {
+  height: 187px;
+  width: 187px;
+  border-radius: 50%;
+}
+
+.container-name {
+  color: var(--white);
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.body-page_human {
+  font-size: 16px;
+  line-height: 21.79px;
+  display: flex;
+}
+
+.text-page_human {
+  width: calc(100% - 10px);
+  max-width: 630px;
+
+  p {
+    padding-bottom: 20px;
+  }
+}
+
+.contact_page-human {
+  span {
+    padding-right: 10px;
+  }
+}
+
+.img-mail {
+  padding-top: 5px;
+}
+
+@media screen and (min-width: 320px) {
+  .header-page_human {
+    padding: 20px 30px;
+  }
+
+  .container-header_page-human {
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .name-page_human {
+    font-size: 36px;
+    line-height: 42.19px;
+
+    span {
+      padding-right: 10px;
+    }
+  }
+
+  .profesion-page_human {
+    font-size: 20px;
+    line-height: 23.44px;
+    padding-top: 10px;
+    padding-right: 30px;
+  }
+
+  .img-avatar {
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .body-page_human {
+    flex-direction: column-reverse;
+    gap: 40px;
+    padding: 40px 15px;
+  }
+
+  .number-phone_page-human {
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-page_human {
+    height: 100%;
+    padding: 30px 200px 0px;
+  }
+
+  .container-header_page-human {
+    margin-right: 650px;
+    flex-direction: row;
+    text-align: start;
+    position: relative;
+    bottom: 40px;
+    z-index: 0;
+  }
+
+  .name-page_human {
+    font-size: 64px;
+    line-height: 75px;
+
+    span {
+      padding-right: 20px;
+    }
+  }
+
+  .profesion-page_human {
+    font-size: 32px;
+    line-height: 37.5px;
+    padding-top: 10px;
+  }
+
+  .body-page_human {
+    padding: 50px 300px;
+    gap: 150px;
+    flex-direction: row;
+  }
+
+  .number-phone_page-human {
+    padding-bottom: 30px;
+  }
+
+  .img-avatar {
+    margin: 0;
+  }
+}

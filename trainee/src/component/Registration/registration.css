@@ -1,0 +1,58 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  width: calc(100% - 10px);
+  max-width: 500px;
+  height: 519px;
+  padding: 16px;
+  margin: 50px auto;
+
+  border-radius: 16px;
+
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.title-registration {
+  font-size: 20px;
+  line-height: 23.44px;
+  margin-bottom: 15px;
+}
+
+.form-registration {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  label {
+    font-size: 16px;
+    line-height: 21.79px;
+  }
+}
+
+.input-registration {
+  border-radius: 8px;
+  padding: 12px 8px 12px 16px;
+  background-color: var(--gray-light);
+  border: 1px solid var(--gray-light);
+
+  width: calc(100% - 10px);
+
+  font-size: 14px;
+  line-height: 16.41px;
+}
+
+.button-registration {
+  height: 48px;
+  width: calc(100% - 10px);
+  padding: 8px 12px;
+  margin-top: 10px;
+
+  background-color: var(--violet);
+  border-radius: 8px;
+
+  font-size: 16px;
+  line-height: 21.79px;
+  color: var(--white);
+}

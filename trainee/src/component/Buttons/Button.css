@@ -1,0 +1,32 @@
+.button-header {
+  width: 81px;
+  height: 38px;
+  padding: 8px 16px;
+
+  font-size: 16px;
+  line-height: 21.79px;
+
+  background-color: var(--violet);
+  color: var(--white);
+
+  border: 1px solid var(--white);
+  border-radius: 8px;
+}
+
+.button-header:hover {
+  background-color: var(--white);
+  color: var(--violet);
+}
+
+.button-header_mobile {
+  background-color: var(--violet);
+}
+
+.btn-back_mobile {
+  background-color: transparent;
+}
+
+.btn-back {
+  position: relative;
+  z-index: 1;
+}

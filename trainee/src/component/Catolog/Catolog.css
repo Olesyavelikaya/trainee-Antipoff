@@ -1,0 +1,40 @@
+.container-catalog {
+  display: flex;
+
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 320px) {
+  .container-catalog {
+    flex-direction: column;
+    margin: 20px 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container-catalog {
+    flex-direction: row;
+    margin: 40px 295px;
+  }
+}
+
+.btn-showMore {
+  width: 170px;
+  height: 40px;
+  padding: 8px 16px;
+
+  border: 1px solid var(--black);
+  border-radius: 10px;
+
+  background-color: var(--white);
+  color: var(--black);
+
+  font-size: 16px;
+  line-height: 21.79px;
+
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 30px;
+}

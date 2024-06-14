@@ -1,0 +1,48 @@
+.main-container_header {
+  background-color: var(--violet);
+  padding: 30px 50px 70px;
+}
+
+.container-text_header {
+  color: var(--white);
+  text-align: center;
+  width: calc(100% - 10px);
+  max-width: 846px;
+}
+
+.title-header {
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 320px) {
+  .title-header {
+    font-size: 36px;
+    line-height: 42.19px;
+  }
+
+  .text-header {
+    font-size: 16px;
+    line-height: 18.75px;
+  }
+}
+
+.btn-header {
+  text-align: end;
+}
+
+@media screen and (min-width: 1280px) {
+  .title-header {
+    font-size: 64px;
+    line-height: 75px;
+  }
+  .text-header {
+    font-size: 20px;
+    line-height: 23.44px;
+  }
+}
+
+.container-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
