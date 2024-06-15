@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import {
   setUserPassword,
   AppDispatch,
@@ -6,17 +7,24 @@ import {
 } from "../../context/context";
 import "./registration.css";
 
-type InputPasswordProps = {
-  error: string;
-};
-
-export function InputPassword(props: InputPasswordProps) {
-  const { error } = props;
+export function InputPassword() {
   const dispatch = useDispatch<AppDispatch>();
   const currentUser = useSelector(selectUser);
+  const [errorPassword, setErrorPassword] = useState("");
 
   const handleChangePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setUserPassword(event.target.value));
+  };
+
+  const validPassword = () => {
+    let isValid = true;
+    if (currentUser.userPassword.toString().length < 6) {
+      setErrorPassword("Пароль должен содержать минимум 6 символов");
+      isValid = false;
+    } else {
+      setErrorPassword("");
+    }
+    return isValid;
   };
 
   return (
@@ -29,10 +37,13 @@ export function InputPassword(props: InputPasswordProps) {
         className="input-registration"
         onChange={handleChangePassword}
         value={currentUser.userPassword}
-        style={{ borderColor: error ? "red" : "" }}
+        onBlur={validPassword}
+        style={{ borderColor: errorPassword ? "red" : "" }}
         required
       />
-      {error && <p style={{ color: "red", fontSize: "10px" }}>{error}</p>}
+      {errorPassword && (
+        <p style={{ color: "red", fontSize: "10px" }}>{errorPassword}</p>
+      )}
     </>
   );
 }

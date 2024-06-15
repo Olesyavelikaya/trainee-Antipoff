@@ -20,4 +20,4 @@ interface userData {
   userRepeatPassword: number | string;
 }
 
-export type {userData, cardInfo };
+export type { userData, cardInfo };

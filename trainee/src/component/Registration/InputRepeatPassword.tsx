@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import {
   setUserRepeatPassword,
   AppDispatch,
@@ -6,13 +7,8 @@ import {
 } from "../../context/context";
 import "./registration.css";
 
-
-type InputRepeatPasswordProps = {
-  error: string;
-};
-
-export function InputRepeatPassword(props: InputRepeatPasswordProps) {
-  const { error } = props;
+export function InputRepeatPassword() {
+  const [errorRepeatPassword, setErrorRepeatPassword] = useState("");
   const dispatch = useDispatch<AppDispatch>();
   const currentUser = useSelector(selectUser);
 
@@ -20,6 +16,33 @@ export function InputRepeatPassword(props: InputRepeatPasswordProps) {
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     dispatch(setUserRepeatPassword(event.target.value));
+  };
+
+  const validRepeatPassword = () => {
+    let isValid = true;
+    if (currentUser.userRepeatPassword.toString().length < 6) {
+      setErrorRepeatPassword("Пароль должен содержать минимум 6 символов");
+      isValid = false;
+    } else {
+      setErrorRepeatPassword("");
+    }
+    return isValid;
+  };
+
+  const convergePassword = () => {
+    let isValid = true;
+    if (currentUser.userRepeatPassword !== currentUser.userPassword) {
+      setErrorRepeatPassword("Пароли должны совпадать");
+      isValid = false;
+    } else {
+      setErrorRepeatPassword("");
+    }
+    return isValid;
+  };
+
+  const chekingRepeatPassword = () => {
+    validRepeatPassword();
+    convergePassword();
   };
 
   return (
@@ -32,10 +55,13 @@ export function InputRepeatPassword(props: InputRepeatPasswordProps) {
         className="input-registration"
         onChange={handleChangeRepeatPassword}
         value={currentUser.userRepeatPassword}
-        style={{ borderColor: error ? "red" : "" }}
+        style={{ borderColor: errorRepeatPassword ? "red" : "" }}
+        onBlur={chekingRepeatPassword}
         required
       />
-      {error && <p style={{ color: "red", fontSize: "10px" }}>{error}</p>}
+      {errorRepeatPassword && (
+        <p style={{ color: "red", fontSize: "10px" }}>{errorRepeatPassword}</p>
+      )}
     </>
   );
 }

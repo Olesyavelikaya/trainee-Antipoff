@@ -1,12 +1,12 @@
 import { Link, useRouteError } from "react-router-dom";
-import './error.css'
-import '../component/Buttons/Button.css'
+import "./error.css";
+import "../component/Buttons/Button.css";
 
 export default function ErrorPage() {
   const error = useRouteError();
   return (
     <div className="errorPage">
-      <div >
+      <div>
         <h2>Упс!</h2> Что-то пошло не так!
         <i>
           {(error as { statusText: string }).statusText ||

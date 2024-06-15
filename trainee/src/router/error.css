@@ -1,9 +1,9 @@
 .errorPage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
 
-    font-size: 35px;
+  font-size: 35px;
 }
