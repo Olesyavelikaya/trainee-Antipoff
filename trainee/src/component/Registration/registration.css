@@ -2,10 +2,10 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-
   width: calc(100% - 10px);
   max-width: 500px;
-  height: 519px;
+  min-height: 550px;
+  max-height: 650px;
   padding: 16px;
   margin: 50px auto;
 
