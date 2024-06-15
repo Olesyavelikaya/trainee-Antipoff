@@ -3,7 +3,6 @@ import { useState } from "react";
 import { setUserName, AppDispatch, selectUser } from "../../context/context";
 import "./registration.css";
 
-
 export function InputName() {
   const [errorName, setErrorName] = useState("");
   const dispatch = useDispatch<AppDispatch>();
