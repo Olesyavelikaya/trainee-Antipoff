@@ -37,7 +37,7 @@ export function Catalog() {
             />
           ))}
       </div>
-      {currentIndex < updateArrCard.length && (
+      {currentIndex + CardPerPage < updateArrCard.length && (
         <button onClick={showMoreCard} className="btn-showMore">
           Показать ещё
         </button>
