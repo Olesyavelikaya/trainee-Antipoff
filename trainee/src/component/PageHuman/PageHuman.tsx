@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useParams, ScrollRestoration } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { ButtonExit } from "../Buttons/ButtonExit";
 import { ButtonBack } from "../Buttons/ButtonBack";
 import { selectCardInfo } from "../../context/context";
 import "./PageHuman.css";
@@ -21,8 +20,6 @@ export function PageHuman() {
           <Link to={"/"} style={{ textDecoration: "none" }}>
             <ButtonBack />
           </Link>
-
-          <ButtonExit />
         </div>
         <div className="container-header_page-human">
           <img
